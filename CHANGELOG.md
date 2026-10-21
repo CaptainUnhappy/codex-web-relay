@@ -1,5 +1,11 @@
 # Changelog
 
+## Codex Relay v1.0.4 - 2026-10-21
+
+- 桌面端 ZIP 的 SHA-256 校验值直接显示在 Release 说明中，不再单独提供校验文件附件。
+- 删除独立 NOTICE，将来源与版权声明合并到 LICENSE，并添加 CaptainUnhappy 的修改版权署名。
+- 同步调整桌面端、中继服务器打包清单及中继安装脚本。
+
 ## Codex Relay v1.0.3 - 2026-10-21
 
 - Release 仅提供桌面端 ZIP 及其 SHA-256 校验文件。

@@ -14,7 +14,8 @@
 | 附件 | 用途 |
 | --- | --- |
 | `codex-relay-desktop-universal.zip` | Windows / macOS 电脑上的桥接程序 |
-| `SHA256SUMS` | 桌面端 ZIP 的 SHA-256 校验值 |
+
+桌面端 ZIP 的 SHA-256 校验值直接显示在每个 Release 的说明中。
 
 请下载具名桌面端 ZIP。GitHub 自动附加的 Source code 源码包可用于自托管中继，步骤见[中继部署说明](relay-server/README.md)。公开 ZIP 不包含注册密钥、设备状态、登录凭据或预置公共中继服务，需要配置自己的中继地址。
 
@@ -99,7 +100,7 @@ npm run package:release
 
 CI 对分支推送与 PR 执行 Windows、macOS、Ubuntu 检查，并运行 Chromium 浏览器回归。全部通过后，Actions 提供 ZIP 构建产物。
 
-发布步骤：更新 `package.json` / `package-lock.json` 的版本和 `CHANGELOG.md`，在分支通过 CI 后合并到受保护的 `main`，再推送匹配版本的标签（例如 `v1.0.3`）。Release 工作流重新检查该标签，构建并核验桌面端 ZIP，再发布 ZIP 和 `SHA256SUMS`。标签必须位于 `main` 历史中且与包版本一致。已发布版本不覆盖，请使用新版本号。
+发布步骤：更新 `package.json` / `package-lock.json` 的版本和 `CHANGELOG.md`，在分支通过 CI 后合并到受保护的 `main`，再推送匹配版本的标签（例如 `v1.0.4`）。Release 工作流重新检查该标签，构建并核验桌面端 ZIP，再发布 ZIP 并将 SHA-256 校验值写入版本说明。标签必须位于 `main` 历史中且与包版本一致。已发布的 ZIP 不覆盖，请使用新版本号。
 
 CI 不需要中继密钥。发布流程只交付桌面端 ZIP，不自动部署 VPS，也不会改动现有设备状态。需要单独的中继部署包时，可在本地运行 `npm run package:server`。私下制作预配置桌面包时，仍可使用 `scripts/package-release.py desktop --env-file <本机配置文件>`；这类包不得作为公开 Release 附件。
 

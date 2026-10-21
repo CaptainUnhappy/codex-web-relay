@@ -1,7 +1,6 @@
 ## 下载
 
 - `codex-relay-desktop-universal.zip`：Windows / macOS 桌面桥接程序。
-- `SHA256SUMS`：桌面端 ZIP 的 SHA-256 校验值。
 
 请下载桌面端 ZIP；自托管中继请使用 Source code 源码包。
 

@@ -50,6 +50,15 @@ jobs:
           path: dist
       - run: sha256sum -c SHA256SUMS
         working-directory: dist
+      - name: Include the verified SHA-256 in release notes
+        shell: bash
+        run: |
+          {
+            cat .github/RELEASE_NOTES.md
+            printf '\n## SHA-256\n\n```text\n'
+            cat dist/SHA256SUMS
+            printf '```\n'
+          } > dist/RELEASE_NOTES.md
       - name: Create or finish the release draft
         shell: bash
         env:
@@ -60,7 +69,7 @@ jobs:
           if draft=$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft 2>/dev/null); then
             test "$draft" = true || { echo 'Published releases are immutable; use a new version tag.'; exit 1; }
           else
-            gh release create "$RELEASE_TAG" --verify-tag --draft --title "Codex Relay $RELEASE_TAG" --notes-file .github/RELEASE_NOTES.md
+            gh release create "$RELEASE_TAG" --verify-tag --draft --title "Codex Relay $RELEASE_TAG" --notes-file dist/RELEASE_NOTES.md
           fi
-          gh release upload "$RELEASE_TAG" dist/codex-relay-desktop-universal.zip dist/SHA256SUMS --clobber
-          gh release edit "$RELEASE_TAG" --draft=false --latest
+          gh release upload "$RELEASE_TAG" dist/codex-relay-desktop-universal.zip --clobber
+          gh release edit "$RELEASE_TAG" --notes-file dist/RELEASE_NOTES.md --draft=false --latest
