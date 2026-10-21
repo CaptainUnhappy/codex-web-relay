@@ -4,7 +4,7 @@
 
 ## 全新安装
 
-准备 Ubuntu / Debian、Node.js 24 LTS，以及可以配置 HTTPS / WSS 反向代理的域名。下载并解压 [Releases](https://github.com/CaptainUnhappy/codex-relay/releases/latest) 中的 `codex-relay-server.zip`，在解压目录运行：
+准备 Ubuntu / Debian、Node.js 24 LTS，以及可以配置 HTTPS / WSS 反向代理的域名。下载并解压 [Releases](https://github.com/CaptainUnhappy/codex-web-relay/releases/latest) 中的 `codex-relay-server.zip`，在解压目录运行：
 
 ```bash
 sudo bash relay-server/install-systemd.sh

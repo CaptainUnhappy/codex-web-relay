@@ -657,6 +657,9 @@ function loginPage(message = '', assetBasePath = '') {
     .message.is-pending { color: #ffd98a; }
     .message.is-ok { color: #8ff0b6; }
     .hint { margin: 14px 0 0; color: #7f8ca2; font-size: 12px; line-height: 1.45; }
+    .desktop-download { display: block; margin-top: 18px; padding: 12px; border: 1px solid #3b4659; border-radius: 8px; color: #e6ecf7; text-align: center; font-size: 14px; font-weight: 650; line-height: 1.4; text-decoration: none; }
+    .desktop-download:hover { background: #1b2330; border-color: #7aa7ff; }
+    .desktop-download:focus-visible { outline: 2px solid #7aa7ff; outline-offset: 3px; }
   </style>
 </head>
 <body>
@@ -686,6 +689,7 @@ function loginPage(message = '', assetBasePath = '') {
       </div>
       <p id="message" class="message">${htmlEscape(message)}</p>
       <p class="hint">打开设备链接会自动连接对应设备；连接成功后会清除链接中的密钥。</p>
+      <a class="desktop-download" href="https://github.com/CaptainUnhappy/codex-web-relay/releases/latest" target="_blank" rel="noopener noreferrer">下载 / 更新桌面端（Windows / macOS）</a>
     </section>
   </main>
   ${jsQrScript ? `<script>${jsQrScript}</script>` : ''}

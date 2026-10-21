@@ -1,5 +1,11 @@
 # Changelog
 
+## Codex Relay v1.0.2 - 2026-10-21
+
+- 仓库迁移至 `CaptainUnhappy/codex-web-relay`，更新下载、反馈与 CI 链接。
+- 中继登录页新增桌面端下载与更新入口，始终指向最新 Release。
+- 保留现有 CI/CD、历史版本 ZIP 和安装配置兼容性。
+
 ## Codex Relay v1.0.1 - 2026-10-21
 
 - 简化首页、中继安装文档和 Release 说明，将来源与版权声明集中到 NOTICE。

@@ -1,7 +1,7 @@
 # Codex Relay
 
-[![CI](https://github.com/CaptainUnhappy/codex-relay/actions/workflows/ci.yml/badge.svg)](https://github.com/CaptainUnhappy/codex-relay/actions/workflows/ci.yml)
-[![Release](https://github.com/CaptainUnhappy/codex-relay/actions/workflows/release.yml/badge.svg)](https://github.com/CaptainUnhappy/codex-relay/releases)
+[![CI](https://github.com/CaptainUnhappy/codex-web-relay/actions/workflows/ci.yml/badge.svg)](https://github.com/CaptainUnhappy/codex-web-relay/actions/workflows/ci.yml)
+[![Release](https://github.com/CaptainUnhappy/codex-web-relay/actions/workflows/release.yml/badge.svg)](https://github.com/CaptainUnhappy/codex-web-relay/releases)
 
 用手机浏览器继续电脑上的 Codex 任务。Codex Relay 在电脑上连接 Codex App Server，通过自托管中继同步消息、图片、运行状态、队列与审批；Codex 账号和执行环境留在自己的电脑上。
 
@@ -9,7 +9,7 @@
 
 ## 下载
 
-从 [Releases](https://github.com/CaptainUnhappy/codex-relay/releases/latest) 下载：
+从 [Releases](https://github.com/CaptainUnhappy/codex-web-relay/releases/latest) 下载：
 
 | 附件 | 用途 |
 | --- | --- |
@@ -106,6 +106,6 @@ CI 不需要中继密钥。发布流程只交付 ZIP，不自动部署 VPS，也
 
 ## 反馈与授权
 
-问题与建议请提交到 [Issues](https://github.com/CaptainUnhappy/codex-relay/issues)，并附系统版本、复现步骤和已脱敏日志。
+问题与建议请提交到 [Issues](https://github.com/CaptainUnhappy/codex-web-relay/issues)，并附系统版本、复现步骤和已脱敏日志。
 
 使用条款见 [LICENSE](LICENSE)，来源与版权声明见 [NOTICE](NOTICE)。历史文档及旧 macOS 包装工程仅作参考；当前分发与安装以本 README 和 Releases 为准。
