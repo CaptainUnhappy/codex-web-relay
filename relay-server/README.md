@@ -65,7 +65,7 @@ location /codex/ {
 ```bash
 sudo systemctl stop codex-mini-relay
 sudo rsync -a --exclude=devices.json --exclude=devices.json.bak relay-server/ /opt/codex-mini-relay/relay-server/
-sudo cp package.json package-lock.json LICENSE NOTICE /opt/codex-mini-relay/
+sudo cp package.json package-lock.json LICENSE /opt/codex-mini-relay/
 cd /opt/codex-mini-relay
 sudo npm ci --omit=dev
 sudo chown -R codex-mini-relay:codex-mini-relay /opt/codex-mini-relay
@@ -91,4 +91,4 @@ sudo journalctl -u codex-mini-relay -f
 
 如需独立的中继部署 ZIP，可在源码根目录运行 `npm run package:server`。Release 只提供桌面端 ZIP，发布版本不会自动部署或重启此服务。
 
-使用条款见 [LICENSE](../LICENSE)，来源与版权声明见 [NOTICE](../NOTICE)。
+使用条款、来源与版权声明见 [LICENSE](../LICENSE)。

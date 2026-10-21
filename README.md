@@ -107,4 +107,4 @@ CI 不需要中继密钥。发布流程只交付桌面端 ZIP，不自动部署 
 
 问题与建议请提交到 [Issues](https://github.com/CaptainUnhappy/codex-web-relay/issues)，并附系统版本、复现步骤和已脱敏日志。
 
-使用条款见 [LICENSE](LICENSE)，来源与版权声明见 [NOTICE](NOTICE)。历史文档及旧 macOS 包装工程仅作参考；当前分发与安装以本 README 和 Releases 为准。
+使用条款、来源与版权声明见 [LICENSE](LICENSE)。历史文档及旧 macOS 包装工程仅作参考；当前分发与安装以本 README 和 Releases 为准。
