@@ -81,7 +81,6 @@ jobs:
           name: release-zips
           path: |
             dist/codex-relay-desktop-universal.zip
-            dist/codex-relay-server.zip
             dist/SHA256SUMS
           if-no-files-found: error
           retention-days: 14

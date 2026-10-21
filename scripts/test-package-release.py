@@ -1,5 +1,6 @@
 """Exercise release packaging and keep private runtime state out of archives."""
 import argparse
+import hashlib
 import importlib.util
 import os
 from pathlib import Path
@@ -14,6 +15,19 @@ spec.loader.exec_module(package)
 
 
 class PrivateStatePackagingTest(unittest.TestCase):
+    def test_desktop_release_checksums_exclude_existing_server_archive(self):
+        with tempfile.TemporaryDirectory(prefix="codex-relay-desktop-release-") as directory:
+            output = Path(directory) / package.DESKTOP_OUTPUT
+            checksums = Path(directory) / "SHA256SUMS"
+            server = Path(directory) / package.SERVER_OUTPUT
+            server.write_bytes(b"existing local server archive")
+            self.assertEqual(package.main([
+                "desktop", "--public", "--output", str(output), "--checksums", str(checksums)
+            ]), 0)
+            digest = hashlib.sha256(output.read_bytes()).hexdigest()
+            self.assertEqual(checksums.read_text(), f"{digest}  {package.DESKTOP_OUTPUT}\n")
+            self.assertEqual(server.read_bytes(), b"existing local server archive")
+
     def test_public_release_does_not_embed_environment_key(self):
         with tempfile.TemporaryDirectory(prefix="codex-relay-public-test-") as directory:
             args = argparse.Namespace(output=str(Path(directory) / package.DESKTOP_OUTPUT),

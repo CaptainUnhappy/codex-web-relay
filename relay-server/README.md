@@ -4,7 +4,7 @@
 
 ## 全新安装
 
-准备 Ubuntu / Debian、Node.js 24 LTS，以及可以配置 HTTPS / WSS 反向代理的域名。下载并解压 [Releases](https://github.com/CaptainUnhappy/codex-web-relay/releases/latest) 中的 `codex-relay-server.zip`，在解压目录运行：
+准备 Ubuntu / Debian、Node.js 24 LTS，以及可以配置 HTTPS / WSS 反向代理的域名。下载并解压 [Releases](https://github.com/CaptainUnhappy/codex-web-relay/releases/latest) 中的 **Source code (zip)**，在解压后的源码根目录运行：
 
 ```bash
 sudo bash relay-server/install-systemd.sh
@@ -60,7 +60,7 @@ location /codex/ {
 
 ## 更新已有部署
 
-先备份 `/etc/codex-mini-relay.env` 和 `/opt/codex-mini-relay/relay-server/devices.json`。将新版 ZIP 解压到另一个目录，在该目录运行以下命令；安装路径有改动时请相应调整。
+先备份 `/etc/codex-mini-relay.env` 和 `/opt/codex-mini-relay/relay-server/devices.json`。将新版 Source code 源码包解压到另一个目录，在源码根目录运行以下命令；安装路径有改动时请相应调整。
 
 ```bash
 sudo systemctl stop codex-mini-relay
@@ -89,6 +89,6 @@ sudo journalctl -u codex-mini-relay -f
 | `ADMIN_SESSION_SECRET` | 管理会话签名密钥 |
 | `CODEX_MINI_RELAY_DEVICES` | 设备注册表路径 |
 
-GitHub Actions 生成并校验中继 ZIP；发布 Release 不会自动部署或重启此服务。
+如需独立的中继部署 ZIP，可在源码根目录运行 `npm run package:server`。Release 只提供桌面端 ZIP，发布版本不会自动部署或重启此服务。
 
 使用条款见 [LICENSE](../LICENSE)，来源与版权声明见 [NOTICE](../NOTICE)。

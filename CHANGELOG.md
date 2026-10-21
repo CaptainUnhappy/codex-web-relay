@@ -1,5 +1,10 @@
 # Changelog
 
+## Codex Relay v1.0.3 - 2026-10-21
+
+- Release 仅提供桌面端 ZIP 及其 SHA-256 校验文件。
+- 中继部署改用 Source code 源码包，仍可在本地生成独立的中继 ZIP。
+
 ## Codex Relay v1.0.2 - 2026-10-21
 
 - 仓库迁移至 `CaptainUnhappy/codex-web-relay`，更新下载、反馈与 CI 链接。

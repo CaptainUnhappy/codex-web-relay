@@ -62,5 +62,5 @@ jobs:
           else
             gh release create "$RELEASE_TAG" --verify-tag --draft --title "Codex Relay $RELEASE_TAG" --notes-file .github/RELEASE_NOTES.md
           fi
-          gh release upload "$RELEASE_TAG" dist/codex-relay-desktop-universal.zip dist/codex-relay-server.zip dist/SHA256SUMS --clobber
+          gh release upload "$RELEASE_TAG" dist/codex-relay-desktop-universal.zip dist/SHA256SUMS --clobber
           gh release edit "$RELEASE_TAG" --draft=false --latest

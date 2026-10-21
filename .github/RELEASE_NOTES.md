@@ -1,10 +1,9 @@
 ## 下载
 
 - `codex-relay-desktop-universal.zip`：Windows / macOS 桌面桥接程序。
-- `codex-relay-server.zip`：自托管 HTTP / WebSocket 中继服务器。
-- `SHA256SUMS`：两个 ZIP 的 SHA-256 校验值。
+- `SHA256SUMS`：桌面端 ZIP 的 SHA-256 校验值。
 
-请下载上述 ZIP；GitHub 自动生成的 Source code 附件是源码快照。
+请下载桌面端 ZIP；自托管中继请使用 Source code 源码包。
 
 首次启动桌面端前，将 `desktop-env.example.ps1`（Windows）或 `desktop-env.example.sh`（macOS）复制为对应的 `desktop-env.local` 文件，并填写自己的中继地址和注册密钥。公开包不包含任何预置中继密钥。
 

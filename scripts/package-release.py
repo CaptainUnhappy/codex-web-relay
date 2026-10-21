@@ -406,6 +406,7 @@ def main(argv: list[str]) -> int:
 
     desktop = sub.add_parser("desktop", help=f"build {DESKTOP_OUTPUT}")
     desktop.add_argument("--output", default=DESKTOP_OUTPUT)
+    desktop.add_argument("--checksums", help="write SHA256SUMS for the validated desktop archive")
     add_key_args(desktop)
 
     server = sub.add_parser("server", help=f"build {SERVER_OUTPUT}")
@@ -426,14 +427,14 @@ def main(argv: list[str]) -> int:
             outputs = [build_server(args, root)]
         elif args.command == "all":
             outputs = build_all(args, root)
-            if args.checksums:
-                checksum_path = root / args.checksums
-                checksum_path.parent.mkdir(parents=True, exist_ok=True)
-                checksum_path.write_text("".join(
-                    f"{hashlib.sha256(output.read_bytes()).hexdigest()}  {output.name}\n" for output in outputs
-                ), encoding="utf-8")
         else:
             raise PackageError(f"unknown command: {args.command}")
+        if getattr(args, "checksums", None):
+            checksum_path = root / args.checksums
+            checksum_path.parent.mkdir(parents=True, exist_ok=True)
+            checksum_path.write_text("".join(
+                f"{hashlib.sha256(output.read_bytes()).hexdigest()}  {output.name}\n" for output in outputs
+            ), encoding="utf-8")
     except PackageError as error:
         print(f"package error: {error}", file=sys.stderr)
         return 1
