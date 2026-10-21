@@ -1,5 +1,11 @@
 # Changelog
 
+## Codex Relay v1.0.1 - 2026-10-21
+
+- 简化首页、中继安装文档和 Release 说明，将来源与版权声明集中到 NOTICE。
+- 桌面端、中继服务器 ZIP 及中继安装流程均携带 LICENSE 和 NOTICE。
+- 更新受保护主分支的发布说明；消息收发功能保持不变。
+
 ## Codex Relay v1.0.0 - 2026-10-21
 
 - 独立维护为 `CaptainUnhappy/codex-relay`，更新界面名称与安装文档，保留原项目署名和许可证。

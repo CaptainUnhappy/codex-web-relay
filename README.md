@@ -5,7 +5,7 @@
 
 用手机浏览器继续电脑上的 Codex 任务。Codex Relay 在电脑上连接 Codex App Server，通过自托管中继同步消息、图片、运行状态、队列与审批；Codex 账号和执行环境留在自己的电脑上。
 
-这是独立维护的衍生项目，基于 **Codex Mini by [CoimgRain](https://github.com/CoimgRain/Codex-Mini)**。本仓库发布自己的 ZIP，使用随附的[非商业使用许可证](LICENSE)，不是 OpenAI 或原项目的官方发行版。
+本仓库独立维护，提供 Windows / macOS 桌面桥接程序和自托管中继服务器。
 
 ## 下载
 
@@ -100,7 +100,7 @@ npm run package:release
 
 CI 对分支推送与 PR 执行 Windows、macOS、Ubuntu 检查，并运行 Chromium 浏览器回归。全部通过后，Actions 提供 ZIP 构建产物。
 
-发布步骤：更新 `package.json` / `package-lock.json` 的版本和 `CHANGELOG.md`，将提交推送到 `main`，再推送匹配版本的标签（例如 `v1.0.1`）。Release 工作流重新检查该标签，构建并核验两个 ZIP，再发布 Release 附件。标签必须位于 `main` 历史中且与包版本一致。已发布版本不覆盖，请使用新版本号。
+发布步骤：更新 `package.json` / `package-lock.json` 的版本和 `CHANGELOG.md`，在分支通过 CI 后合并到受保护的 `main`，再推送匹配版本的标签（例如 `v1.0.1`）。Release 工作流重新检查该标签，构建并核验两个 ZIP，再发布 Release 附件。标签必须位于 `main` 历史中且与包版本一致。已发布版本不覆盖，请使用新版本号。
 
 CI 不需要中继密钥。发布流程只交付 ZIP，不自动部署 VPS，也不会改动现有设备状态。私下制作预配置桌面包时，仍可使用 `scripts/package-release.py desktop --env-file <本机配置文件>`；这类包不得作为公开 Release 附件。
 
@@ -108,4 +108,4 @@ CI 不需要中继密钥。发布流程只交付 ZIP，不自动部署 VPS，也
 
 问题与建议请提交到 [Issues](https://github.com/CaptainUnhappy/codex-relay/issues)，并附系统版本、复现步骤和已脱敏日志。
 
-本项目保留 Codex Mini 的原作者署名和许可证，允许个人、学习、研究、评估等非商业用途。商业服务、付费托管、代部署等用途需要原版权方授权，详见 [LICENSE](LICENSE)。历史文档及旧 macOS 包装工程保留原名称，仅作历史参考；当前分发与安装以本 README 和 Releases 为准。
+使用条款见 [LICENSE](LICENSE)，来源与版权声明见 [NOTICE](NOTICE)。历史文档及旧 macOS 包装工程仅作参考；当前分发与安装以本 README 和 Releases 为准。

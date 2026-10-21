@@ -20,6 +20,7 @@ DESKTOP_FILES = [
     "package-lock.json",
     "README.md",
     "LICENSE",
+    "NOTICE",
     "CHANGELOG.md",
     "start-codex-mini-relay.bat",
     "start-codex-mini-relay.command",
@@ -45,7 +46,7 @@ DESKTOP_SCRIPTS = [
 ]
 DESKTOP_OUTPUT = "codex-relay-desktop-universal.zip"
 
-SERVER_FILES = ["package.json", "package-lock.json", "LICENSE"]
+SERVER_FILES = ["package.json", "package-lock.json", "LICENSE", "NOTICE"]
 SERVER_DIRS = ["relay-server"]
 SERVER_OUTPUT = "codex-relay-server.zip"
 

@@ -2,8 +2,6 @@
 
 自托管 HTTP / WebSocket 中继，将手机请求转发给已配对的电脑。任务执行与 Codex 登录状态留在电脑端。
 
-本项目基于 **Codex Mini by [CoimgRain](https://github.com/CoimgRain/Codex-Mini)**，遵守随包提供的[非商业使用许可证](../LICENSE)。
-
 ## 全新安装
 
 准备 Ubuntu / Debian、Node.js 24 LTS，以及可以配置 HTTPS / WSS 反向代理的域名。下载并解压 [Releases](https://github.com/CaptainUnhappy/codex-relay/releases/latest) 中的 `codex-relay-server.zip`，在解压目录运行：
@@ -67,7 +65,7 @@ location /codex/ {
 ```bash
 sudo systemctl stop codex-mini-relay
 sudo rsync -a --exclude=devices.json --exclude=devices.json.bak relay-server/ /opt/codex-mini-relay/relay-server/
-sudo cp package.json package-lock.json LICENSE /opt/codex-mini-relay/
+sudo cp package.json package-lock.json LICENSE NOTICE /opt/codex-mini-relay/
 cd /opt/codex-mini-relay
 sudo npm ci --omit=dev
 sudo chown -R codex-mini-relay:codex-mini-relay /opt/codex-mini-relay
@@ -92,3 +90,5 @@ sudo journalctl -u codex-mini-relay -f
 | `CODEX_MINI_RELAY_DEVICES` | 设备注册表路径 |
 
 GitHub Actions 生成并校验中继 ZIP；发布 Release 不会自动部署或重启此服务。
+
+使用条款见 [LICENSE](../LICENSE)，来源与版权声明见 [NOTICE](../NOTICE)。

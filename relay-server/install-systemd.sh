@@ -24,6 +24,7 @@ mkdir -p "$APP_DIR"
 rm -rf "$APP_DIR/relay-server"
 cp -R "$ROOT_DIR/relay-server" "$APP_DIR/relay-server"
 cp "$ROOT_DIR/package.json" "$APP_DIR/package.json"
+cp "$ROOT_DIR/LICENSE" "$ROOT_DIR/NOTICE" "$APP_DIR/"
 if [[ -f "$ROOT_DIR/package-lock.json" ]]; then
   cp "$ROOT_DIR/package-lock.json" "$APP_DIR/package-lock.json"
 fi
