@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>提问 · Codex Mini</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./client.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="page-header"><h1>Codex 提问</h1><span id="connection" role="status">正在连接…</span><button id="reconnect" hidden>重新连接</button></header>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <div id="questions"></div>
+    <p id="empty" hidden>暂时没有待回答的问题。</p>
+  </main>
+  <template id="question-template">
+    <article class="question-card" data-state="pending">
+      <header class="question-header"><h2>问题</h2><button class="question-reopen" hidden>继续回答</button><button class="question-close" aria-label="收起问题，稍后回答">×</button></header>
+      <div class="question-content"><p class="question-prompt"></p>
+        <form>
+          <div class="question-options" role="radiogroup"></div>
+          <label class="question-custom"><span aria-hidden="true">✎</span><textarea rows="1" maxlength="16000" aria-label="自定义回答" placeholder="或自行撰写回复"></textarea></label>
+          <p class="question-help" aria-live="polite"></p>
+          <div class="approval-actions"><button type="button" class="question-defer">稍后回答</button><button type="submit" class="question-submit" aria-label="发送回答" disabled>发送</button></div>
+        </form>
+        <div class="answer-receipt" hidden><p class="answer-status" role="status"></p><p class="answer"></p><details hidden><summary>保留的未发送内容</summary><p class="saved-draft"></p></details></div>
+      </div>
+    </article>
+  </template>
+</body>
+</html>

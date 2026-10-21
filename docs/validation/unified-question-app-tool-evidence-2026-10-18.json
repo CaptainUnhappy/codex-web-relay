@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "threadId": "01a14dcb-3bf7-7c60-9e10-ebb350f80a24",
+  "questionId": "app-question-806abb56-924d-4a31-b5bc-2df5b731d8d0",
+  "receiptId": "43002e51-10f1-4266-b5e2-aa84887d7ff7",
+  "deliveryId": "7fa77198-6ef8-4e22-99c6-233a82148416",
+  "realAppMcp": true,
+  "modelVisibleAnswers": 1,
+  "modelVisibleDuplicateRejections": 1,
+  "answerBodyOnDuplicate": false,
+  "mcpAnswerEvents": 1,
+  "answerEmitted": 1,
+  "durable": {
+    "answers": 1,
+    "deliveries": 1,
+    "integrity": "ok"
+  },
+  "successTurnId": "01a14f15-a431-7572-9d16-46c4ddd28cdf",
+  "duplicateTurnIds": [
+    "01a14f1a-f3cf-75b0-ae65-2432c9d90e69"
+  ],
+  "evidenceLines": {
+    "modelAnswer": 224,
+    "duplicateOutputs": [
+      273
+    ],
+    "modelFinal": 229
+  },
+  "physicalPhone": false,
+  "desktopSurface": "Codex in-app browser, independent unified question card",
+  "nativeAsyncCard": false
+}
